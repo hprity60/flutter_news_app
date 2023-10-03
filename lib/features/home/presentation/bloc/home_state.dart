@@ -7,3 +7,23 @@ abstract class HomeState extends Equatable {
   List<Object> get props => [];
 }
 class HomeInitial extends HomeState {}
+
+class ArticleLoadingState extends HomeState {
+  
+}
+
+class ArticleLoadedState extends HomeState {
+  final List<Article> article;
+
+  const ArticleLoadedState({required this.article});
+  @override
+  List<Object> get props => [article];
+}
+
+class ArticleFailureState extends HomeState {
+  final String errorMessage;
+
+  const ArticleFailureState({required this.errorMessage});
+  @override
+  List<Object> get props => [errorMessage];
+}

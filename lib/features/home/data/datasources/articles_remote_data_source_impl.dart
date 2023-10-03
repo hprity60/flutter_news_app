@@ -12,7 +12,7 @@ class ArticlesRemoteDataSourceImpl implements ArticlesRemoteDataSource {
   @override
   Future<List<Article>> getAllArticles() async {
     try {
-      Response response = await dio.client.post(ApiEndPoints.baseUrl);
+      Response response = await dio.client.get(ApiEndPoints.baseUrl);
       // final responseBody = response.data;
       final List<dynamic> jsonBody = response.data;
 

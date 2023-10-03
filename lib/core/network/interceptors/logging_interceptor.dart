@@ -16,9 +16,9 @@ class LoggingInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError error, ErrorInterceptorHandler handler) {
-    _logError(error);
-    super.onError(error, handler);
+  void onError(DioException err, ErrorInterceptorHandler handler) {
+    _logError(err);
+    super.onError(err, handler);
   }
 
   void _logRequest(RequestOptions options) {
